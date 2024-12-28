@@ -4,3 +4,4 @@
 - Part 39 : Dynamic User Interfaces ✅
 - Part 40 : Dimensions API ✅
 - Part 41 : Dimensions API Drawbacks ✅
+- Part 42 : useWindowDimensions ✅

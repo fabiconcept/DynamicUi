@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 
 export default function HomeScreen() {
-  const [dimensions, setDimensions] = useState(Dimensions.get('window'));
-
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', (newDimensions) => {
-      setDimensions(newDimensions.window);
-    })
-
-    return () => subscription?.remove();
-  }, []);
+  const dimensions = useWindowDimensions();
 
   const { width, height } = dimensions;
   const isLargeScreen = width > 500;
