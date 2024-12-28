@@ -1,57 +1,32 @@
-import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
-  const dimensions = useWindowDimensions();
-
-  const { width, height } = dimensions;
-  const isLargeScreen = width > 500;
-  const isSmallScreen = width < 300;
-  const isMediumScreen = width >= 300 && width < 500;
-
-  const isTallScreen = height > 600;
-
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.box, isLargeScreen ? styles.box_w_lg : styles.box_w_md, isTallScreen ? styles.box_h_md : styles.box_h_lg]}>
-        <Text style={[isLargeScreen && styles.text_xl, isMediumScreen && styles.text_lg, isSmallScreen && styles.text_sm]}>Welcome Hi!</Text>
-        <Text style={[isLargeScreen && styles.text_xl, isMediumScreen && styles.text_lg, isSmallScreen && styles.text_sm]}>{width}, {height}</Text>
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.container}>
+        <View style={styles.box}>
+          <Text style={styles.text}>Welcome Hi!</Text>
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safeContainer: {
     flex: 1,
     backgroundColor: 'plum',
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
   },
   box: {
-    backgroundColor: 'lightblue',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // padding: 20
   },
-  box_w_lg: {
-    width: "90%",
-  },
-  box_h_lg: {
-    height: "90%",
-  },
-  box_w_md: {
-    width: "70%",
-  },
-  box_h_md: {
-    height: "60%",
-  },
-  text_lg: {
+  text: {
     fontSize: 24,
-  },
-  text_sm: {
-    fontSize: 12,
-  },
-  text_xl: {
-    fontSize: 36,
-  },
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
 });
