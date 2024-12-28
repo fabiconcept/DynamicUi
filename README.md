@@ -6,3 +6,4 @@
 - Part 41 : Dimensions API Drawbacks ✅
 - Part 42 : useWindowDimensions ✅
 - Part 43 : SafeAreaView ✅
+- Part 44 : platform Specific Code ✅
